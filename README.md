@@ -22,7 +22,7 @@ The logic remains consistent (3x3 grid, turn-based loop, win detection), but the
 | :---                  | :---:     | :---                  | :---                                  |
 | **C**                 | ⬜ Todo   | `/c/main.c`           | Pointers, Headers, Memory Mgmt        |
 | **C++**               | ⬜ Todo   | `/cpp/main.cpp`       | Pointers, Headers, Memory Mgmt        |
-| **C# (.NET)**         | ⬜ Todo   | `/csharp/Program.cs`  | Classes, Arrays, `Console.ReadLine`   |
+| **C# (.NET)**         | ⏳ In-Progress   | `/csharp/Program.cs`  | Classes, Arrays, `Console.ReadLine`   |
 | **Python**            | ⬜ Todo   | `/python/main.py`     | Lists, `input()`, `try/except`        |
 | **JavaScript**        | ⬜ Todo   | `/js/index.js`        | Node.js, Async Input (`readline`)     |
 | **Rust**              | ⬜ Todo   | `/rust/main.rs`       | Ownership, Borrowing, `Result`        |
