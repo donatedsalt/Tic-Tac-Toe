@@ -14,8 +14,7 @@ public static partial class Drawer
 
         HorizontalAlignCursorPosition(text, alignment);
 
-        Console.Write(text);
-        Console.Write("\n");
+        Console.WriteLine(text);
 
         Console.ResetColor();
     }
