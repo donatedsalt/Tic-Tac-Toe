@@ -2,9 +2,9 @@ using TikTacToe.Enum;
 
 namespace TikTacToe.UI;
 
-public partial class Writer
+public static partial class Drawer
 {
-    public void Divider(DividerCharacter character = DividerCharacter.SingleLine,
+    public static void Divider(DividerCharacter character = DividerCharacter.SingleLine,
             ConsoleColor? foregroundColor = null,
             ConsoleColor? backgroundColor = null)
     {

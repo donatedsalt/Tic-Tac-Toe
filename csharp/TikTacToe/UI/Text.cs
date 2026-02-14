@@ -2,10 +2,9 @@ using TikTacToe.Enum;
 
 namespace TikTacToe.UI;
 
-public partial class Writer
+public static partial class Drawer
 {
-
-    public void Text(string text,
+    public static void Text(string text,
         HorizontalAlignment alignment = HorizontalAlignment.Left,
         ConsoleColor? foregroundColor = null,
         ConsoleColor? backgroundColor = null)
@@ -21,7 +20,7 @@ public partial class Writer
         Console.ResetColor();
     }
 
-    private void HorizontalAlignCursorPosition(string text, HorizontalAlignment alignment)
+    private static void HorizontalAlignCursorPosition(string text, HorizontalAlignment alignment)
     {
         switch (alignment)
         {
