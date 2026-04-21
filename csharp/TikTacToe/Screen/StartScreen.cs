@@ -6,22 +6,37 @@ namespace TikTacToe.Screen;
 
 public static partial class Screens
 {
-	public static void StartScreen()
-	{
-		Console.Clear();
+    public static int StartScreen()
+    {
+        Console.Clear();
 
-		Divider(DividerCharacter.DoubleLine);
-		Text("Welcome to Tik-Tac-Toe!", HorizontalAlignment.Center);
-		Divider(DividerCharacter.DoubleLine);
+        Divider(DividerCharacter.DoubleLine);
+        Text("Welcome to Tik-Tac-Toe!", HorizontalAlignment.Center);
+        Divider(DividerCharacter.DoubleLine);
 
-		Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop + 3);
-		Text("Please Select From The Avaliable Game Modes.", HorizontalAlignment.Center);
-		Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop + 5);
+        Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop + 3);
+        Text("Please Select From The Avaliable Game Modes.", HorizontalAlignment.Center);
+        Text("Press Ctrl+C to exit.", HorizontalAlignment.Center);
+        Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop + 5);
 
-		Text("Avaliable Game Modes:");
-		Text("1. Player VS Player.");
-		Text("2. Player VS Computer.");
-		Console.ReadKey();
-	}
+        Text("Avaliable Game Modes:");
+        Text("1. Player VS Player.");
+        Text("2. Player VS Computer.");
+        var key = Console.ReadKey();
+
+        if (key.Key == ConsoleKey.D1)
+        {
+            return 1;
+        }
+        else if (key.Key == ConsoleKey.D2)
+        {
+            return 2;
+        }
+        else
+        {
+            return 0;
+        }
+
+    }
 
 }
