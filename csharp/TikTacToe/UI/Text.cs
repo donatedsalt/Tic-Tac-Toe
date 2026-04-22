@@ -12,9 +12,13 @@ public static partial class Drawer
         if (foregroundColor != null) Console.ForegroundColor = (ConsoleColor)foregroundColor;
         if (backgroundColor != null) Console.BackgroundColor = (ConsoleColor)backgroundColor;
 
-        HorizontalAlignCursorPosition(text, alignment);
+        string[] lines = text.Split(["\r\n", "\n", "\r"], StringSplitOptions.None);
 
-        Console.WriteLine(text);
+        foreach (string line in lines)
+        {
+            HorizontalAlignCursorPosition(line, alignment);
+            Console.WriteLine(line);
+        }
 
         Console.ResetColor();
     }
