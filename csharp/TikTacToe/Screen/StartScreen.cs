@@ -22,13 +22,13 @@ public static partial class Screens
         Text("Avaliable Game Modes:");
         Text("1. Player VS Player.");
         Text("2. Player VS Computer.");
-        var key = Console.ReadKey();
+        char key = Console.ReadKey().KeyChar;
 
-        if (key.Key == ConsoleKey.D1)
+        if (key == '1')
         {
             return GameMode.PlayerVSPlayer;
         }
-        else if (key.Key == ConsoleKey.D2)
+        else if (key == '2')
         {
             return GameMode.PlayerVSComputer;
         }
