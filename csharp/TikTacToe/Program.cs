@@ -1,4 +1,5 @@
-﻿using TikTacToe.Screen;
+﻿using TikTacToe.Enum;
+using TikTacToe.Screen;
 
 namespace TikTacToe;
 
@@ -6,17 +7,17 @@ internal static class Program
 {
     private static void Main()
     {
-        int GameMode = 0;
-        while (GameMode == 0)
+        GameMode gameMode = GameMode.Invalid;
+        while (gameMode == GameMode.Invalid)
         {
-            GameMode = Screens.StartScreen();
+            gameMode = Screens.StartScreen();
         }
 
-        if (GameMode == 1)
+        if (gameMode == GameMode.PlayerVSPlayer)
         {
             Screens.PlayerVSPlayer();
         }
-        else if (GameMode == 2)
+        else if (gameMode == GameMode.PlayerVSComputer)
         {
             Screens.PlayerVSComputer();
         }

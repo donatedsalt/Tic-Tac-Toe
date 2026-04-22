@@ -6,7 +6,7 @@ namespace TikTacToe.Screen;
 
 public static partial class Screens
 {
-    public static int StartScreen()
+    public static GameMode StartScreen()
     {
         Console.Clear();
 
@@ -26,15 +26,15 @@ public static partial class Screens
 
         if (key.Key == ConsoleKey.D1)
         {
-            return 1;
+            return GameMode.PlayerVSPlayer;
         }
         else if (key.Key == ConsoleKey.D2)
         {
-            return 2;
+            return GameMode.PlayerVSComputer;
         }
         else
         {
-            return 0;
+            return GameMode.Invalid;
         }
 
     }
