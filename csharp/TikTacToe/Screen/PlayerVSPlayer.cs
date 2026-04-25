@@ -11,9 +11,9 @@ public static partial class Screens
         Grid.Reset();
 
         Player currentPlayer = Player.Player1;
-        Player winner = Player.Invalid;
+        Player? winner = null;
 
-        while (winner == Player.Invalid)
+        while (winner == null)
         {
             BoardScreen(GameMode.PlayerVSPlayer, currentPlayer);
 

@@ -4,7 +4,7 @@ namespace TikTacToe.UI;
 
 public static partial class Drawer
 {
-    internal static void BoardScreen(GameMode GameMode, Player currentPlayer, bool isWinner = false)
+    internal static void BoardScreen(GameMode GameMode, Player? currentPlayer, bool gameCompleted = false)
     {
         Console.Clear();
 
@@ -23,13 +23,20 @@ public static partial class Drawer
 
         Grid.Draw();
 
-        if (isWinner)
+        if (gameCompleted)
         {
-            Text($"{currentPlayer.ToString()} wins!", HorizontalAlignment.Center);
+            if (currentPlayer == Player.Invalid)
+            {
+                Text("It's a draw!", HorizontalAlignment.Center);
+            }
+            else
+            {
+                Text($"{currentPlayer?.ToString()} wins!", HorizontalAlignment.Center);
+            }
         }
         else
         {
-            Text($"{currentPlayer.ToString()}, Select a position (1-9)", HorizontalAlignment.Center);
+            Text($"{currentPlayer?.ToString()}, Select a position (1-9)", HorizontalAlignment.Center);
         }
     }
 }

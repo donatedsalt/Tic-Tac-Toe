@@ -29,7 +29,7 @@ public static partial class Drawer
             board[row, col] = value;
         }
 
-        public static Player GetWinner()
+        public static Player? GetWinner()
         {
             for (int i = 0; i < 3; i++)
             {
@@ -57,7 +57,29 @@ public static partial class Drawer
                 return board[0, 2] == 'X' ? Player.Player1 : Player.Player2;
             }
 
-            return Player.Invalid;
+            if (IsFull())
+            {
+                return Player.Invalid;
+            }
+
+            return null;
+        }
+
+        public static bool IsFull()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (board[i, j] == '1' || board[i, j] == '2' || board[i, j] == '3' ||
+                        board[i, j] == '4' || board[i, j] == '5' || board[i, j] == '6' ||
+                        board[i, j] == '7' || board[i, j] == '8' || board[i, j] == '9')
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         public static void Reset()
