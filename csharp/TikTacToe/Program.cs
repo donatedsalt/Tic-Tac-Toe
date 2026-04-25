@@ -7,19 +7,31 @@ internal static class Program
 {
     private static void Main()
     {
-        GameMode gameMode = GameMode.Invalid;
-        while (gameMode == GameMode.Invalid)
+        // main game loop
+        bool continueGame = true;
+
+        while (continueGame)
         {
-            gameMode = Screens.StartScreen();
+            // get the game mode from the start screen
+            GameMode gameMode = GameMode.Invalid;
+
+            while (gameMode == GameMode.Invalid)
+            {
+                gameMode = Screens.StartScreen();
+            }
+
+
+            // play the game based on the selected mode
+            if (gameMode == GameMode.PlayerVSPlayer)
+            {
+                continueGame = Screens.PlayerVSPlayer();
+            }
+            else if (gameMode == GameMode.PlayerVSComputer)
+            {
+                continueGame = Screens.PlayerVSComputer();
+            }
         }
 
-        if (gameMode == GameMode.PlayerVSPlayer)
-        {
-            Screens.PlayerVSPlayer();
-        }
-        else if (gameMode == GameMode.PlayerVSComputer)
-        {
-            Screens.PlayerVSComputer();
-        }
+        Console.WriteLine("Thanks for playing!");
     }
 }

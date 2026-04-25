@@ -6,10 +6,11 @@ namespace TikTacToe.Screen;
 
 public static partial class Screens
 {
-    public static void PlayerVSPlayer()
+    public static bool PlayerVSPlayer()
     {
-        Player currentPlayer = Player.Player1;
+        Grid.Reset();
 
+        Player currentPlayer = Player.Player1;
         Player winner = Player.Invalid;
 
         while (winner == Player.Invalid)
@@ -27,6 +28,10 @@ public static partial class Screens
             {
                 Grid.Update(coords[0], coords[1], currentPlayer == Player.Player1 ? 'X' : 'O');
             }
+            else
+            {
+                continue;
+            }
 
             winner = Grid.GetWinner();
 
@@ -34,6 +39,19 @@ public static partial class Screens
         }
 
         BoardScreen(GameMode.PlayerVSPlayer, winner, true);
-        Console.ReadKey();
+
+        Console.WriteLine("Press 1 to go to the main menu.");
+        Console.WriteLine("Press any other key to exit.");
+
+        if (Console.ReadKey().KeyChar == '1')
+        {
+            Console.Clear();
+            return true;
+        }
+        else
+        {
+            Console.Clear();
+            return false;
+        }
     }
 }
