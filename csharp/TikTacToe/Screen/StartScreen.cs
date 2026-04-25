@@ -16,7 +16,7 @@ public static partial class Screens
 
         Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop + 3);
         Text("Please Select From The Avaliable Game Modes.", HorizontalAlignment.Center);
-        Text("Press Ctrl+C to exit.", HorizontalAlignment.Center);
+        Text("Press Ctrl+C anytime to exit.", HorizontalAlignment.Center);
         Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop + 5);
 
         Text("Avaliable Game Modes:");
