@@ -8,10 +8,8 @@ public static partial class Screens
 {
     public static void PlayerVSComputer()
     {
-        Player currentPlayer = Player.Player1;
-
-        BoardScreen(GameMode.PlayerVSComputer, currentPlayer);
-
+        Console.Clear();
+        Console.WriteLine("Not implemented yet!");
         Console.ReadKey();
     }
 }
