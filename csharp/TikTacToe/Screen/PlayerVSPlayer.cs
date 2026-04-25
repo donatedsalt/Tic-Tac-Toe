@@ -18,8 +18,11 @@ public static partial class Screens
 
             int position = int.Parse(Console.ReadKey().KeyChar.ToString());
 
-            int[] coords = Grid.GetCellCoords(position);
+            int[]? coords = Grid.GetCellCoords(position);
+            if (coords == null) continue;
+
             Player cell = Grid.GetCellPlayer(coords[0], coords[1]);
+
             if (cell == Player.Invalid)
             {
                 Grid.Update(coords[0], coords[1], currentPlayer == Player.Player1 ? 'X' : 'O');

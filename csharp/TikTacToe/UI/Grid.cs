@@ -15,8 +15,10 @@ public static partial class Drawer
             return board[row, col] == 'X' ? Player.Player1 : board[row, col] == 'O' ? Player.Player2 : Player.Invalid;
         }
 
-        public static int[] GetCellCoords(int position)
+        public static int[]? GetCellCoords(int position)
         {
+            if (position < 1 || position > 9) return null;
+
             int row = (position - 1) / 3;
             int col = (position - 1) % 3;
             return [row, col];
