@@ -36,7 +36,5 @@ public static partial class Screens
         {
             return GameMode.Invalid;
         }
-
     }
-
 }

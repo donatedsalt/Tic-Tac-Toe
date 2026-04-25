@@ -69,12 +69,12 @@ public static partial class Drawer
             string Seperator = "─────────┼─────────┼─────────";
 
             string Board = $"""
-        {Section.Replace('a', board[0, 0]).Replace('b', board[0, 1]).Replace('c', board[0, 2])}
-        {Seperator}
-        {Section.Replace('a', board[1, 0]).Replace('b', board[1, 1]).Replace('c', board[1, 2])}
-        {Seperator}
-        {Section.Replace('a', board[2, 0]).Replace('b', board[2, 1]).Replace('c', board[2, 2])}
-        """;
+            {Section.Replace('a', board[0, 0]).Replace('b', board[0, 1]).Replace('c', board[0, 2])}
+            {Seperator}
+            {Section.Replace('a', board[1, 0]).Replace('b', board[1, 1]).Replace('c', board[1, 2])}
+            {Seperator}
+            {Section.Replace('a', board[2, 0]).Replace('b', board[2, 1]).Replace('c', board[2, 2])}
+            """;
 
             Console.SetCursorPosition(0, Console.GetCursorPosition().Top + 2);
             Text(Board, HorizontalAlignment.Center);
