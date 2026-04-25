@@ -8,14 +8,10 @@ public static partial class Screens
 {
     public static void PlayerVSComputer()
     {
-        Console.Clear();
+        Player currentPlayer = Player.Player1;
 
-        Divider(DividerCharacter.DoubleLine);
-        Text("Player VS Computer.", HorizontalAlignment.Center);
-        Divider(DividerCharacter.DoubleLine);
+        BoardScreen(GameMode.PlayerVSComputer, currentPlayer);
 
         Console.ReadKey();
-
     }
-
 }
